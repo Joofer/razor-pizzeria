@@ -3,5 +3,68 @@
 @{
 }
 
-<a class="nav-link text-dark" asp-area="" asp-page="/Forms/CustomPizza">Custom pizza</a>
-<a class="nav-link text-dark" asp-area="" asp-page="/Checkout/Checkout">Checkout</a>
+<div class="text-center">
+
+	<div class="p-4">
+
+		<h1 class="text-danger text-capitalize">
+			Choose from literally anything!
+		</h1>
+
+		<p class="subtitle">
+			Find something that suits taste of yours and do not forget that your pals won't tolerate <span class="text-warning">pineapples</span> in pizza!
+		</p>
+
+		<div class="alert alert-light" role="alert">
+			<p class="subtitle">
+				Also try out our custom pizza - so we can satisfy your picky taste! <span class="text-danger"><a class="link-hidden" asp-area="" asp-page="/Forms/CustomPizza">Create</a></span>
+			</p>
+		</div>
+
+	</div>
+
+	<div class="container">
+
+		<div class="row">
+
+			<!-- Custom pizza -->
+			<div class="col-12 mb-5 mt-5">
+				<div class="row custom-pizza">
+					<div class="col-4">
+						<a class="link-hidden" asp-area="" asp-page="/Forms/CustomPizza">
+							<img src="~/images/Pizzas/Create.png" class="w-100" />
+						</a>
+					</div>
+					<div class="col-8">
+						<div class="h-100 d-flex align-items-center">
+							<div class="custom-pizza-text">
+								<a class="link-hidden" asp-area="" asp-page="/Forms/CustomPizza">
+									<h4 class="text-danger mb-0">Custom pizza</h4>
+									<p>Make your own pizza with any ingredient you want (like we're not aware you just wanna triple cheese)! Pick anything, any amount, even everything, still delicious, exclusively for you, not now only, but still.</p>
+								</a>
+								<p>
+									Available ingredietns:
+									<br />
+									<span class="badge bg-danger">pepperoni</span>
+									<span class="badge bg-danger">bacon</span>
+									<span class="badge bg-warning">mozarellea</span>
+									<span class="badge bg-warning">cheddar</span>
+									<br />
+									<span class="badge bg-success">jalapeno</span>
+									<span class="badge bg-warning">pineapple</span>
+									<span class="badge bg-success">spices</span>
+
+									<br />
+									<span class="badge bg-success">vegie pepperoni</span>
+									<span class="badge bg-success">vegie bacon</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
