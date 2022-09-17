@@ -16,3 +16,47 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* global */
+
+.subtitle {
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.image {
+    border-radius: 20px;
+    margin: 40px;
+}
+
+.shadow-pink {
+    filter: drop-shadow(0px 0px 10px rgba(255, 0, 0, 0.3));
+}
+
+.link-hidden {
+    color: inherit;
+    text-decoration: inherit;
+    padding: inherit;
+}
+
+.link-hidden:hover {
+    color: inherit;
+}
+
+/* pizza page */
+
+.custom-pizza {
+    margin: 0;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.2);
+    border-radius: 20px;
+}
+
+.custom-pizza-text {
+    text-align: left;
+}
+
+.pizza-subtitle {
+    font-weight: 400;
+    color: grey;
+}
