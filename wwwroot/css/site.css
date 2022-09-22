@@ -52,6 +52,21 @@ body {
     border-radius: 20px;
 }
 
+.pizza-box-desktop {
+
+}
+
+@media (min-width: 1200px) {
+    .pizza-box-mobile {
+        display: none;
+    }
+}
+@media (max-width: 1199px) {
+    .pizza-box-desktop {
+        display: none;
+    }
+}
+
 .pizza-container-text {
     text-align: left;
 }
