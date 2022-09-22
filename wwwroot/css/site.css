@@ -53,15 +53,21 @@ body {
 }
 
 .pizza-box-desktop {
-
+    height: 440px;
 }
 
 @media (min-width: 1200px) {
+    .pizza-container {
+        min-height: 440px;
+    }
     .pizza-box-mobile {
         display: none;
     }
 }
 @media (max-width: 1199px) {
+    .pizza-container {
+        min-height: auto;
+    }
     .pizza-box-desktop {
         display: none;
     }
