@@ -3,4 +3,31 @@
 @{
 }
 
-<a class="nav-link text-dark" asp-area="" asp-page="/Checkout/Thank">Thank you</a>
+<div class="text-center">
+
+	<div class="p-4">
+
+		<h1 class="text-danger text-capitalize">
+			Your order
+		</h1>
+
+	</div>
+
+	@{
+		var imagePath = "~/images/Pizzas/" + (@Model.ImageTitle + ".png");
+	}
+
+	<div class="container">
+
+		<div class="w-100 mx-auto m-5 px-5 p-5 rounded-2 bg-light col-4">
+
+			<img src=@imagePath class="w-25" asp-append-version="true" />
+			<p>Your order for the <span class="badge bg-success text-capitalize">@Model.PizzaName</span> Pizza is ready!</p>
+			<p>Total price: <span class="badge bg-success">$@Model.Price</span></p>
+			<a class="btn btn-success mt-1 mx-auto" asp-area="" asp-page="Thank">Pay</a>
+
+		</div>
+
+	</div>
+
+</div>
