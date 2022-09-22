@@ -3,4 +3,59 @@
 @{
 }
 
-<a class="nav-link text-dark" asp-area="" asp-page="/Checkout/Checkout">Checkout</a>
+<div class="text-center">
+
+	<div class="p-4">
+
+		<h1 class="text-danger text-capitalize">
+			Create your own pizza
+		</h1>
+
+		<p class="subtitle">
+			You can pick any amount of ingredients. In case you love it (which you will), you'll be able to re-order your pizza anytime.
+		</p>
+
+		<div class="alert alert-danger" role="alert">
+			<p class="subtitle text-danger">
+				This week you can add extra cheese to your pizza for free!
+			</p>
+		</div>
+
+	</div>
+
+	<div class="container">
+
+		<form method="post" class="w-100 mx-auto m-5 px-5 p-5 rounded-2 bg-light col-4">
+
+			<input type="text" asp-for="Pizza.PizzaName" placeholder="Give it a name if you want..." />
+			<br />
+
+			<input type="checkbox" asp-for="Pizza.Pepperoni" placeholder="Pepperoni" />Pepperoni
+			<input type="checkbox" asp-for="Pizza.Bacon" placeholder="Bacon" />Bacon
+			<input type="checkbox" asp-for="Pizza.Ham" placeholder="Ham" />Ham
+			<input type="checkbox" asp-for="Pizza.Beef" placeholder="Beef" />Beef
+			<br />
+
+			<input type="checkbox" asp-for="Pizza.Mozzarella" placeholder="Mozzarella" />Mozzarella
+			<input type="checkbox" asp-for="Pizza.Cheddar" placeholder="Cheddar" />Cheddar
+			<br />
+
+			<input type="checkbox" asp-for="Pizza.Jalapeno" placeholder="Jalapeno" />Jalapeno
+			<input type="checkbox" asp-for="Pizza.Spices" placeholder="Spices" />Spices
+			<input type="checkbox" asp-for="Pizza.Mushroom" placeholder="Mushroom" />Mushroom
+			<input type="checkbox" asp-for="Pizza.Pineapple" placeholder="Pineapple" />Pineapple
+			<br />
+
+			<input type="checkbox" asp-for="Pizza.TomatoSauce" placeholder="Tomatosauce" />Tomato sauce
+			<br />
+
+			<span class="badge bg-success"><input type="checkbox" asp-for="Pizza.MakeVegie" placeholder="MakeVegie" />Make vegie</span>
+			<br />
+
+			<button class="btn btn-danger mt-1" type="submit">Order</button>
+
+		</form>
+
+	</div>
+
+</div>
