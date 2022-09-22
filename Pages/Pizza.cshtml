@@ -66,7 +66,92 @@
 				</div>
 			</div>
 
-			<!-- Margherita pizza -->
+			@foreach (var pizza in Model.fakePizzasDB)
+			{
+				var imagePath = "~/images/Pizzas/" + (pizza.ImageTitle + ".png");
+				<div class="pizza-box-desktop col-3 mb-3">
+					<div class="row pizza-container p-1 pb-2">
+						<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout" asp-route-ImageTitle="@pizza.ImageTitle" asp-route-Price="@pizza.FinalPrice" asp-route-PizzaName="@pizza.PizzaName">
+							<img src="@imagePath" class="w-100 rounded" asp-append-version="true" />
+							<h4 class="text-danger mb-0">@pizza.PizzaName</h4>
+							<p>
+								@if (pizza.TomatoSauce)
+								{
+									<span class="badge bg-danger">tomato sauce</span>
+								}
+								@if (pizza.Mozzarella)
+								{
+									<span class="badge bg-warning">mozzarella</span>
+								}
+								@if (pizza.Cheddar)
+								{
+									<span class="badge bg-warning">cheddar</span>
+								}
+								@if (pizza.Pepperoni)
+								{
+									<span class="badge bg-danger">pepperoni</span>
+								}
+								@if (pizza.Bacon)
+								{
+									<span class="badge bg-danger">bacon</span>
+								}
+								@if (pizza.Ham)
+								{
+									<span class="badge bg-danger">ham</span>
+								}
+								@if (pizza.Beef)
+								{
+									<span class="badge bg-danger">beef</span>
+								}
+								@if (pizza.Mushroom)
+								{
+									<span class="badge bg-info">mushroom</span>
+								}
+								@if (pizza.Pineapple)
+								{
+									<span class="badge bg-warning">pineapple</span>
+								}
+								@if (pizza.Jalapeno)
+								{
+									<span class="badge bg-success">jalapeno</span>
+								}
+								@if (pizza.Spices)
+								{
+									<span class="badge bg-success">spices</span>
+								}
+							</p>
+							<span class="btn btn-danger">Add to cart</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="pizza-box-mobile col-12 mb-3">
+					<div class="row pizza-container">
+						<div class="col-4 p-1">
+							<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
+								<img src="@imagePath" class="w-100 rounded" asp-append-version="true" />
+							</a>
+						</div>
+						<div class="col-8 p-4">
+							<div class="h-100 d-flex align-items-center">
+								<div class="pizza-container-text">
+									<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout" asp-route-ImageTitle="@pizza.ImageTitle" asp-route-Price="@pizza.FinalPrice" asp-route-PizzaName="@pizza.PizzaName">
+										<h4 class="text-danger mb-0">@pizza.PizzaName</h4>
+										<p>
+											<span class="badge bg-danger">tomatoes</span>
+											<span class="badge bg-danger">tomato sauce</span>
+											<span class="badge bg-warning">mozzarella</span>
+										</p>
+										<span class="btn btn-danger rounded">Add to cart</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+
+			<!-- Margherita pizza
 			<div class="pizza-box-desktop col-3 mb-3">
 				<div class="row pizza-container p-1 pb-2">
 					<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
@@ -108,227 +193,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Margherita pizza -->
-
-			<!-- Margherita pizza -->
-			<div class="pizza-box-desktop col-3 mb-3">
-				<div class="row pizza-container p-1 pb-2">
-					<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-						<img src="~/images/Pizzas/Create.png" class="w-100" asp-append-version="true" />
-						<h4 class="text-danger mb-0">Margherita</h4>
-						<p>Classic is for true connoisseurs.</p>
-						<p>
-							<span class="badge bg-danger">tomatoes</span>
-							<span class="badge bg-danger">tomato sauce</span>
-							<span class="badge bg-warning">mozzarella</span>
-						</p>
-						<span class="btn btn-danger">Add to cart</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="pizza-box-mobile col-12 mb-3">
-				<div class="row pizza-container">
-					<div class="col-4 p-1">
-						<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-							<img src="~/images/Pizzas/Create.png" class="w-100" />
-						</a>
-					</div>
-					<div class="col-8 p-4">
-						<div class="h-100 d-flex align-items-center">
-							<div class="pizza-container-text">
-								<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-									<h4 class="text-danger mb-0">Margherita</h4>
-									<p>Classic is for true connoisseurs.</p>
-									<p>
-										<span class="badge bg-danger">tomatoes</span>
-										<span class="badge bg-danger">tomato sauce</span>
-										<span class="badge bg-warning">mozzarella</span>
-									</p>
-									<span class="btn btn-danger rounded">Add to cart</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Margherita pizza -->
-
-			<!-- Margherita pizza -->
-			<div class="pizza-box-desktop col-3 mb-3">
-				<div class="row pizza-container p-1 pb-2">
-					<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-						<img src="~/images/Pizzas/Create.png" class="w-100" asp-append-version="true" />
-						<h4 class="text-danger mb-0">Margherita</h4>
-						<p>Classic is for true connoisseurs.</p>
-						<p>
-							<span class="badge bg-danger">tomatoes</span>
-							<span class="badge bg-danger">tomato sauce</span>
-							<span class="badge bg-warning">mozzarella</span>
-						</p>
-						<span class="btn btn-danger">Add to cart</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="pizza-box-mobile col-12 mb-3">
-				<div class="row pizza-container">
-					<div class="col-4 p-1">
-						<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-							<img src="~/images/Pizzas/Create.png" class="w-100" />
-						</a>
-					</div>
-					<div class="col-8 p-4">
-						<div class="h-100 d-flex align-items-center">
-							<div class="pizza-container-text">
-								<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-									<h4 class="text-danger mb-0">Margherita</h4>
-									<p>Classic is for true connoisseurs.</p>
-									<p>
-										<span class="badge bg-danger">tomatoes</span>
-										<span class="badge bg-danger">tomato sauce</span>
-										<span class="badge bg-warning">mozzarella</span>
-									</p>
-									<span class="btn btn-danger rounded">Add to cart</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Margherita pizza -->
-
-			<!-- Margherita pizza -->
-			<div class="pizza-box-desktop col-3 mb-3">
-				<div class="row pizza-container p-1 pb-2">
-					<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-						<img src="~/images/Pizzas/Create.png" class="w-100" asp-append-version="true" />
-						<h4 class="text-danger mb-0">Margherita</h4>
-						<p>Classic is for true connoisseurs.</p>
-						<p>
-							<span class="badge bg-danger">tomatoes</span>
-							<span class="badge bg-danger">tomato sauce</span>
-							<span class="badge bg-warning">mozzarella</span>
-						</p>
-						<span class="btn btn-danger">Add to cart</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="pizza-box-mobile col-12 mb-3">
-				<div class="row pizza-container">
-					<div class="col-4 p-1">
-						<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-							<img src="~/images/Pizzas/Create.png" class="w-100" />
-						</a>
-					</div>
-					<div class="col-8 p-4">
-						<div class="h-100 d-flex align-items-center">
-							<div class="pizza-container-text">
-								<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-									<h4 class="text-danger mb-0">Margherita</h4>
-									<p>Classic is for true connoisseurs.</p>
-									<p>
-										<span class="badge bg-danger">tomatoes</span>
-										<span class="badge bg-danger">tomato sauce</span>
-										<span class="badge bg-warning">mozzarella</span>
-									</p>
-									<span class="btn btn-danger rounded">Add to cart</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Margherita pizza -->
-
-			<!-- Margherita pizza -->
-			<div class="pizza-box-desktop col-3 mb-3">
-				<div class="row pizza-container p-1 pb-2">
-					<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-						<img src="~/images/Pizzas/Create.png" class="w-100" asp-append-version="true" />
-						<h4 class="text-danger mb-0">Margherita</h4>
-						<p>Classic is for true connoisseurs.</p>
-						<p>
-							<span class="badge bg-danger">tomatoes</span>
-							<span class="badge bg-danger">tomato sauce</span>
-							<span class="badge bg-warning">mozzarella</span>
-						</p>
-						<span class="btn btn-danger">Add to cart</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="pizza-box-mobile col-12 mb-3">
-				<div class="row pizza-container">
-					<div class="col-4 p-1">
-						<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-							<img src="~/images/Pizzas/Create.png" class="w-100" />
-						</a>
-					</div>
-					<div class="col-8 p-4">
-						<div class="h-100 d-flex align-items-center">
-							<div class="pizza-container-text">
-								<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-									<h4 class="text-danger mb-0">Margherita</h4>
-									<p>Classic is for true connoisseurs.</p>
-									<p>
-										<span class="badge bg-danger">tomatoes</span>
-										<span class="badge bg-danger">tomato sauce</span>
-										<span class="badge bg-warning">mozzarella</span>
-									</p>
-									<span class="btn btn-danger rounded">Add to cart</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Margherita pizza -->
-
-			<!-- Margherita pizza -->
-			<div class="pizza-box-desktop col-3 mb-3">
-				<div class="row pizza-container p-1 pb-2">
-					<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-						<img src="~/images/Pizzas/Create.png" class="w-100" asp-append-version="true" />
-						<h4 class="text-danger mb-0">Margherita</h4>
-						<p>Classic is for true connoisseurs.</p>
-						<p>
-							<span class="badge bg-danger">tomatoes</span>
-							<span class="badge bg-danger">tomato sauce</span>
-							<span class="badge bg-warning">mozzarella</span>
-						</p>
-						<span class="btn btn-danger">Add to cart</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="pizza-box-mobile col-12 mb-3">
-				<div class="row pizza-container">
-					<div class="col-4 p-1">
-						<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-							<img src="~/images/Pizzas/Create.png" class="w-100" />
-						</a>
-					</div>
-					<div class="col-8 p-4">
-						<div class="h-100 d-flex align-items-center">
-							<div class="pizza-container-text">
-								<a class="link-hidden" asp-area="" asp-page="/Checkout/Checkout">
-									<h4 class="text-danger mb-0">Margherita</h4>
-									<p>Classic is for true connoisseurs.</p>
-									<p>
-										<span class="badge bg-danger">tomatoes</span>
-										<span class="badge bg-danger">tomato sauce</span>
-										<span class="badge bg-warning">mozzarella</span>
-									</p>
-									<span class="btn btn-danger rounded">Add to cart</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Margherita pizza -->
+			Margherita pizza -->
 
 		</div>
 
